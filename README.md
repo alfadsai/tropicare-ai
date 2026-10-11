@@ -68,8 +68,6 @@ Tambahkan gambar aplikasi ke `assets/screenshot.png`, lalu gambar tersebut akan 
 
 ![Screenshot TropiCare AI](assets/screenshot.png)
 
-> Placeholder: unggah screenshot aplikasi ke lokasi `assets/screenshot.png` setelah tersedia.
-
 ## 🚀 Local deployment
 
 ```bash
