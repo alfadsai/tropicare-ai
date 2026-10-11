@@ -9,7 +9,7 @@ from google import genai
 from google.genai import types
 from openai import OpenAI
 
-APP_TITLE = "TropiCare AI"
+APP_TITLE = "🦟 TropiCare AI"
 DEFAULT_MODEL = "gemini-3.8-flash"
 MAX_OUTPUT_TOKENS = 2048
 KEMKES_PROFILE_URL = "https://www.kemkes.go.id/id/category/profil-kesehatan"
@@ -223,24 +223,24 @@ def init_session_state() -> None:
 
 def render_sidebar() -> tuple[str, str, str]:
     with st.sidebar:
-        st.header("Pengaturan")
-        provider = st.selectbox("Pilih provider AI", list(PROVIDERS))
+        st.header("⚙️ Pengaturan")
+        provider = st.selectbox("🤖 Pilih provider AI", list(PROVIDERS))
         provider_config = PROVIDERS[provider]
-        model = st.selectbox("Model", provider_config["models"])
+        model = st.selectbox("🧠 Model", provider_config["models"])
         configured_key = get_secret_api_key(provider_config["secret_name"])
         api_key = st.text_input(
-            f"{provider} API key",
+            f"🔑 {provider} API key",
             value=configured_key,
             type="password",
             help=provider_config["help"],
         ).strip()
-        st.caption("Gunakan API key milik Anda sendiri. Jangan gunakan atau membagikan key publik.")
-        st.caption("Free tier tetap memiliki rate limit dan kebijakan penggunaan provider.")
+        st.caption("🔒 Gunakan API key milik Anda sendiri. Jangan gunakan atau membagikan key publik.")
+        st.caption("⏱️ Free tier tetap memiliki rate limit dan kebijakan penggunaan provider.")
         st.divider()
-        st.markdown("**Rujukan kesehatan**")
-        st.link_button("Buka Profil Kesehatan Kemenkes", KEMKES_PROFILE_URL)
-        st.caption("Publikasi resmi, bukan dashboard kasus harian real-time.")
-        if st.button("Hapus percakapan", use_container_width=True):
+        st.markdown("**📚 Rujukan kesehatan**")
+        st.link_button("🔗 Buka Profil Kesehatan Kemenkes", KEMKES_PROFILE_URL)
+        st.caption("📄 Publikasi resmi, bukan dashboard kasus harian real-time.")
+        if st.button("🧹 Hapus percakapan", use_container_width=True):
             st.session_state.messages = []
             st.rerun()
     return provider, model, api_key
@@ -258,11 +258,11 @@ def main() -> None:
     provider, model, api_key = render_sidebar()
 
     st.title(APP_TITLE)
-    st.write("Tanya jawab edukatif tentang penyakit infeksi tropis dengan rujukan kesehatan resmi.")
-    st.info("Jawaban bersifat edukatif dan bukan pengganti pemeriksaan tenaga kesehatan.")
+    st.write("💬 Tanya jawab edukatif tentang penyakit infeksi tropis dengan rujukan kesehatan resmi.")
+    st.info("⚕️ Jawaban bersifat edukatif dan bukan pengganti pemeriksaan tenaga kesehatan.")
     render_chat()
 
-    prompt = st.chat_input("Contoh: Apa tanda bahaya demam berdarah pada orang dewasa?")
+    prompt = st.chat_input("💬 Contoh: Apa tanda bahaya demam berdarah pada orang dewasa?")
     if not prompt:
         return
 
