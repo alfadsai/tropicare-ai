@@ -253,7 +253,7 @@ def render_chat() -> None:
 
 
 def main() -> None:
-    st.set_page_config(page_title=APP_TITLE, page_icon="+", layout="centered")
+    st.set_page_config(page_title=APP_TITLE, page_icon="🦟", layout="centered")
     init_session_state()
     provider, model, api_key = render_sidebar()
 
