@@ -1,17 +1,17 @@
 # TropiCare AI
 
-Chatbot edukasi tentang penyakit infeksi tropis menggunakan Python, Streamlit, dan Gemini API.
+Chatbot edukasi tentang penyakit menular tropis menggunakan Python, Streamlit, dan Gemini API.
 
 ## Fitur
 
 - Chat interaktif dengan Gemini.
 - Input Gemini API key melalui sidebar.
-- Dukungan pertanyaan tentang malaria, demam berdarah, gejala, pencegahan, transmisi, dan penanganan secara edukatif.
+- Dukungan pertanyaan tentang malaria, demam berdarah, gejala, pencegahan, penularan, dan penanganan secara edukatif.
 - Guardrail agar chatbot tidak mendiagnosis atau memberikan dosis obat personal.
 - Rujukan ke halaman resmi [Profil Kesehatan Kemenkes](https://www.kemkes.go.id/id/category/profil-kesehatan).
 - Penanganan API key, error jaringan, kuota, dan percakapan per sesi.
 
-## Menjalankan secara lokal
+## Local deployment
 
 ```bash
 python -m venv .venv
@@ -41,7 +41,7 @@ GEMINI_API_KEY = "your-api-key"
 
 5. Deploy dan uji pertanyaan sederhana sebelum membagikan URL aplikasi.
 
-## Batasan sumber kesehatan
+## Batasan sumber 
 
 Halaman Profil Kesehatan Kemenkes merupakan indeks publikasi resmi, bukan dashboard kasus harian. Aplikasi tidak boleh mengarang angka kasus terkini. Untuk laporan terbaru, periksa publikasi dan sumber resmi terkait, lalu cantumkan tanggal serta tautannya.
 
